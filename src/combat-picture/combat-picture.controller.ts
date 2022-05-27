@@ -16,10 +16,6 @@ export class CombatPictureController {
   @Get()
   @Header('Content-Type', 'image/jpeg')
   async generate(@Query('url') url: string, @Res() res: Response) {
-    const imageWithBubble = await this.combatPictureService.getFacesFromUrl(
-      url,
-    );
-    imageWithBubble.pipe(res);
     try {
       const imageWithBubble = await this.combatPictureService.getFacesFromUrl(
         url,
